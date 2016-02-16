@@ -13,9 +13,21 @@ namespace Lab4 {
         public Form1() {
             InitializeComponent();
         }
+        Boolean isSaved = false;
+        private void Form1_Load(object sender, EventArgs e) {
 
-        private void pictureBox1_Click(object sender, EventArgs e) {
+        }
+        public bool IsSaved
+        {
+            get
+            {
+                return isSaved;
+            }
 
+            set
+            {
+                isSaved = value;
+            }
         }
     }
 }
