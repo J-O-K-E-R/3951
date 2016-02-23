@@ -1,0 +1,8 @@
+C:\wewlad\JustinMcLennan\JustinMcLennan\bin\Debug\JustinMcLennan.exe.config
+C:\wewlad\JustinMcLennan\JustinMcLennan\bin\Debug\JustinMcLennan.exe
+C:\wewlad\JustinMcLennan\JustinMcLennan\bin\Debug\JustinMcLennan.pdb
+C:\wewlad\JustinMcLennan\JustinMcLennan\obj\Debug\JustinMcLennan.FormView.resources
+C:\wewlad\JustinMcLennan\JustinMcLennan\obj\Debug\JustinMcLennan.Properties.Resources.resources
+C:\wewlad\JustinMcLennan\JustinMcLennan\obj\Debug\JustinMcLennan.csproj.GenerateResource.Cache
+C:\wewlad\JustinMcLennan\JustinMcLennan\obj\Debug\JustinMcLennan.exe
+C:\wewlad\JustinMcLennan\JustinMcLennan\obj\Debug\JustinMcLennan.pdb
