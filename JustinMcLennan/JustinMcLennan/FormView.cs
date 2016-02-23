@@ -92,10 +92,14 @@ namespace JustinMcLennan
         /// <param name="e"></param>
         private void FromView_Resize(object sender, EventArgs e)
         {
+            
             //Used the same side so it is kept a square
             //instead of a rectangle
             _width = this.ClientRectangle.Width / 10;
             _height = this.ClientRectangle.Width / 10;
+            //resets to center of screen
+            _x = (this.ClientRectangle.Width / 2) - (_width/2);
+            _y = this.ClientRectangle.Height / 2 - (_height/2);
         }
         /// <summary>
         /// Window timer allows for set window timer intervals
