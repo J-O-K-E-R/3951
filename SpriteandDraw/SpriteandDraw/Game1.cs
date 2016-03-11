@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 using ProjectName;
 
 namespace SpriteandDraw {
@@ -13,6 +14,8 @@ namespace SpriteandDraw {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         List<Circle> circles = new List<Circle>();
+        //List<int> vertical = new List<int>();
+        //ILookup<int, int> board;
         private SpriteFont font;
         //private double score = 0;
 
@@ -25,12 +28,14 @@ namespace SpriteandDraw {
         }
         protected void CreateCircle() {
             //width starts at -50 - 1550
-            int x = 735;
-            int[] y = {805, 770, 735, 700};
+            //, 735, 718, 752, 718, 701 
+            int[] x = {735, 718, 752, 701, 735, 769, 684, 718, 752, 786};
+            //, 750, 780, 780, 720 
+            int[] y = {810, 780, 780, 750, 750, 750, 720, 720, 720, 720};
             for(int i = 0; i < y.Length; i++)
             {
                 Console.WriteLine(GraphicsDevice.Viewport.Width);
-                circles.Add(new Circle(new Vector2(x, y[i])));
+                circles.Add(new Circle(new Vector2(x[i], y[i])));
             }
         }
         /// <summary>
