@@ -13,7 +13,7 @@ namespace SpriteandDraw {
     public class Game1 : Game {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        List<Circle> circles = new List<Circle>();
+        List<Circle> board = new List<Circle>();
         //List<int> vertical = new List<int>();
         //ILookup<int, int> board;
         private SpriteFont font;
@@ -26,17 +26,130 @@ namespace SpriteandDraw {
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
         }
-        protected void CreateCircle() {
-            //width starts at -50 - 1550
-            //, 735, 718, 752, 718, 701 
-            int[] x = {735, 718, 752, 701, 735, 769, 684, 718, 752, 786};
-            //, 750, 780, 780, 720 
-            int[] y = {810, 780, 780, 750, 750, 750, 720, 720, 720, 720};
-            for(int i = 0; i < y.Length; i++)
+        protected void CreateBoard() {
+            int i, height;
+            int[] x = new int[100];
+            int[] y = new int[100];
+            //middle row
+            height = 130;
+            for (i = 0; i <= 8; i++)
             {
-                Console.WriteLine(GraphicsDevice.Viewport.Width);
-                circles.Add(new Circle(new Vector2(x[i], y[i])));
+                x[i] = 735;
+                y[i] = height;
+                height += 80;
             }
+            //left 1
+            height = 170;
+            for(i = 9; i <= 16; i++)
+            {
+                x[i] = 714;
+                y[i] = height;
+                height += 80;
+            }
+            //left 2
+            height = 210;
+            for (i = 17; i <= 23; i++)
+            {
+                x[i] = 693;
+                y[i] = height;
+                height += 80;
+            }
+            //left 3
+            height = 250;
+            for (i = 24; i <= 29; i++)
+            {
+                x[i] = 672;
+                y[i] = height;
+                height += 80;
+            }
+            //left 4
+            height = 290;//reuse the height
+            for (i = 30; i <= 34; i++)
+            {
+                x[i] = 651;
+                y[i] = height;
+                height += 80;
+            }
+            //left 5
+            height = 330; //resue for height 2
+            for (i = 35; i <= 38; i++)
+            {
+                x[i] = 630;
+                y[i] = height;
+                height += 80;
+            }
+            //left 6
+            height = 290;
+            for (i = 40; i <= 44; i++)
+            {
+                x[i] = 609;
+                y[i] = height;
+                height += 80;
+            }
+            //left 7
+            height = 330;
+            for (i = 45; i <= 48; i++)
+            {
+                x[i] = 588;
+                y[i] = height;
+                height += 80;
+            }
+            //left 8
+            height = 290;
+            for (i = 49; i <= 53; i++)
+            {
+                x[i] = 567;
+                y[i] = height;
+                height += 80;
+            }
+            //left 9
+            height = 330;
+            for (i = 54; i <= 57; i++)
+            {
+                x[i] = 546;
+                y[i] = height;
+                height += 80;
+            }
+            //left 10
+            height = 290;
+            for (i = 58; i <= 59; i++)
+            {
+                x[i] = 525;
+                y[i] = height;
+                height += 80;
+            }
+            height = 530;
+            for (i = 60; i <= 61; i++)
+            {
+                x[i] = 525;
+                y[i] = height;
+                height += 80;
+            }
+            //left 11
+            x[62] = 504;
+            y[62] = 330;
+            x[63] = 504;
+            y[63] = 570;
+            //left 12
+            x[64] = 483;
+            y[64] = 290;
+            x[65] = 483;
+            y[65] = 610;
+
+
+
+            for (i = 0; i < y.Length; i++)
+            {
+                //Console.WriteLine(GraphicsDevice.Viewport.Width);
+                board.Add(new Circle(new Vector2(x[i], y[i])));
+            }
+            /*height = 170;
+            for (i = 17; i <= 24; i++)
+            {
+                x[i] = 756;
+                y[i] = height;
+                height += 80;
+            }*/
         }
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -49,7 +162,7 @@ namespace SpriteandDraw {
             this.IsMouseVisible = true;
 
 
-            CreateCircle();
+            CreateBoard();
             base.Initialize();
         }
 
@@ -96,7 +209,7 @@ namespace SpriteandDraw {
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            foreach (Circle circle in circles)
+            foreach (Circle circle in board)
                 circle.Draw(spriteBatch);
             //spriteBatch.DrawString(font, "Chung what the hell are you doing: " + score, new Vector2(100, 100), Color.Black);
             spriteBatch.End();
